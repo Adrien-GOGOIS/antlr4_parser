@@ -13,21 +13,45 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#prog}.
+	 * Visit a parse tree produced by the {@code Program}
+	 * labeled alternative in {@link ExprParser#prog}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitProg(ExprParser.ProgContext ctx);
+	T visitProgram(ExprParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#decl}.
+	 * Visit a parse tree produced by the {@code Declaration}
+	 * labeled alternative in {@link ExprParser#decl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecl(ExprParser.DeclContext ctx);
+	T visitDeclaration(ExprParser.DeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#expr}.
+	 * Visit a parse tree produced by the {@code Multiplication}
+	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpr(ExprParser.ExprContext ctx);
+	T visitMultiplication(ExprParser.MultiplicationContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Addition}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddition(ExprParser.AdditionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Variable}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariable(ExprParser.VariableContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumber(ExprParser.NumberContext ctx);
 }

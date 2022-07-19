@@ -7,17 +7,17 @@ grammar Expr;
 }
 
 // Start Symbol
-prog: (decl | expr)+ EOF
+prog: (decl | expr)+ EOF        # Program
     ;
 
-decl: ID ':' INT_TYPE '=' NUM
+decl: ID ':' INT_TYPE '=' NUM   # Declaration
     ;
 
 /* ANTLR resolve ambiguities in favor of alternative given first */
-expr: expr '*' expr
-    | expr '+' expr
-    | ID
-    | NUM
+expr: expr '*' expr             # Multiplication
+    | expr '+' expr             # Addition
+    | ID                        # Variable
+    | NUM                       # Number
     ;
 
 /* TOKEN */

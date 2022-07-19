@@ -10,33 +10,75 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface ExprListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#prog}.
+	 * Enter a parse tree produced by the {@code Program}
+	 * labeled alternative in {@link ExprParser#prog}.
 	 * @param ctx the parse tree
 	 */
-	void enterProg(ExprParser.ProgContext ctx);
+	void enterProgram(ExprParser.ProgramContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#prog}.
+	 * Exit a parse tree produced by the {@code Program}
+	 * labeled alternative in {@link ExprParser#prog}.
 	 * @param ctx the parse tree
 	 */
-	void exitProg(ExprParser.ProgContext ctx);
+	void exitProgram(ExprParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#decl}.
+	 * Enter a parse tree produced by the {@code Declaration}
+	 * labeled alternative in {@link ExprParser#decl}.
 	 * @param ctx the parse tree
 	 */
-	void enterDecl(ExprParser.DeclContext ctx);
+	void enterDeclaration(ExprParser.DeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#decl}.
+	 * Exit a parse tree produced by the {@code Declaration}
+	 * labeled alternative in {@link ExprParser#decl}.
 	 * @param ctx the parse tree
 	 */
-	void exitDecl(ExprParser.DeclContext ctx);
+	void exitDeclaration(ExprParser.DeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#expr}.
+	 * Enter a parse tree produced by the {@code Multiplication}
+	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr(ExprParser.ExprContext ctx);
+	void enterMultiplication(ExprParser.MultiplicationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#expr}.
+	 * Exit a parse tree produced by the {@code Multiplication}
+	 * labeled alternative in {@link ExprParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr(ExprParser.ExprContext ctx);
+	void exitMultiplication(ExprParser.MultiplicationContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Addition}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterAddition(ExprParser.AdditionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Addition}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitAddition(ExprParser.AdditionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Variable}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariable(ExprParser.VariableContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Variable}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariable(ExprParser.VariableContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumber(ExprParser.NumberContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link ExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumber(ExprParser.NumberContext ctx);
 }
